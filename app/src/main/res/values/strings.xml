@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <!--Login Screen-->
+    <string name="label_login_screen_name">Inicio</string>
+    <string name="label_welcome">¡Bienvenido!</string>
+    <string name="label_button_login">Ingresar</string>
+    <string name="label_hint_set_name">Ingresa tu nombre</string>
+    <string name="label_switch_able_biometrics">Habilitar biometricos</string>
+
+
+    <!--DashBoard Screen-->
+    <string name="label_dashboard_screen_name">Clima</string>
+    <string name="label_greeting">¡Hola %s!</string>
+    <string name="label_item_weather">Weather</string>
+    <string name="label_item_degree">Degree</string>
+    <string name="label_item_wind">Wind</string>
+    <string name="label_item_sunrise">Sunrise</string>
+    <string name="label_item_sunset">Sunset</string>
+    <string name="label_item_min">%s°C Min</string>
+    <string name="label_item_max">%s°C Max</string>
+    <string name="label_item_percent">%s percent</string>
+    <string name="label_item_kilometer">%s Km/hr</string>
+    <string name="label_item_Centigrade">%s °C</string>
+
+
+    <!--Profile Screen-->
+    <string name="label_profile_screen_name">Perfil</string>
+    <string name="label_welcome_user">¡Bienvenido %s!</string>
+    <string name="label_hint_set_email">Email</string>
+    <string name="label_hint_set_phone_number">Telefono</string>
+    <string name="label_button_update_data">Actualizar Datos</string>
+    <string name="label_button_logout">Cerrar Sesión</string>
+    <string name="label_profile_update_successfully">Se actualizaron los datos correctamente.</string>
+
+    <!--Errors-->
+    <string name="label_error_field_empty">El campo no puede estar vacio</string>
+    <string name="label_error_phone_no_correct">El formato del telefono es incorrecto</string>
+    <string name="label_error_email_no_correct">El formato del correo es incorrecto</string>
+</resources>

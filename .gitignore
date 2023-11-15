@@ -1,0 +1,57 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Archivos generados por Android Studio
+/.idea
+/.gradle
+
+# Carpeta de generación de archivos de compilación
+/build
+
+# Carpetas de salida de compilación
+/app/build
+/captured-pngs
+
+# Archivos de configuración local
+proguard-rules.pro
+
+# Archivos de dependencias
+*.jar
+*.aar
+
+# Configuración de versión de Android
+/version.properties
+
+# Carpeta de archivl  os de generación
+/app/generated
+
+# Archivos de copias de seguridad de Gradle
+app/proguard-rules.pro
+app/proguard-rules.pro-*
+
+# Carpeta de caché
+/app/build/intermediates/caches
+
+# Carpetas de salida de archivos de prueba
+/test
+
+# Android NDK
+/cmake_build
+
+# Directorio de archivos de análisis estático
+/lint
+
+# Carpeta de archivos de compilación de Maven
+/releases

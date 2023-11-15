@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/card_view_radius_corner"
+    app:cardUseCompatPadding="true"
+    android:layout_width="match_parent"
+    android:minWidth="@dimen/grid_7"
+    app:cardElevation="@dimen/grid_1"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivIconItem"
+            android:layout_width="@dimen/grid_5"
+            android:layout_height="@dimen/grid_5"
+            android:layout_marginVertical="@dimen/grid_2"
+            android:layout_marginStart="@dimen/grid_2"
+            android:src="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/tvTitleItem"
+            android:layout_width="@dimen/grid_0"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivIconItem"
+            app:layout_constraintTop_toTopOf="@id/ivIconItem"
+            tools:text="Weather"
+            style="@style/ItemTitleBold" />
+
+        <TextView
+            android:id="@+id/tvValueItem"
+            style="@style/ItemBody"
+            android:layout_width="@dimen/grid_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            app:layout_constraintBottom_toBottomOf="@id/ivIconItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivIconItem"
+            tools:text="32° C" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

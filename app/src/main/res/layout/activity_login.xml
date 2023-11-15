@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvTitleWelcome"
+        android:layout_width="@dimen/grid_0"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/grid_3"
+        android:layout_marginTop="@dimen/grid_4"
+        android:text="@string/label_welcome"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLogin"
+        android:layout_width="@dimen/grid_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/grid_4"
+        android:layout_marginHorizontal="@dimen/grid_4"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleWelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_hint_set_name"
+            android:inputType="text|textPersonName"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="@dimen/grid_0"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_login"
+        android:layout_marginTop="@dimen/grid_2"
+        android:layout_marginHorizontal="@dimen/grid_4"
+        app:layout_constraintTop_toBottomOf="@+id/tilLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swBiometrics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/grid_4"
+        android:layout_marginTop="@dimen/grid_5"
+        app:switchPadding="@dimen/grid_2"
+        android:text="@string/label_switch_able_biometrics"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="291dp" />
+
+    <FrameLayout
+        android:id="@+id/backgroundProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_0">0dp</dimen>
+    <dimen name="grid_1">4dp</dimen>
+    <dimen name="grid_2">8dp</dimen>
+    <dimen name="grid_3">16dp</dimen>
+    <dimen name="grid_4">32dp</dimen>
+    <dimen name="grid_5">64dp</dimen>
+    <dimen name="grid_6">128dp</dimen>
+    <dimen name="grid_7">140dp</dimen>
+    <dimen name="grid_8">200dp</dimen>
+    <dimen name="grid_9">250dp</dimen>
+    <dimen name="button_radius_corner">15dp</dimen>
+    <dimen name="card_view_radius_corner">0dp</dimen>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tvUserTitle"
+                style="@style/Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/grid_2"
+                android:text="@string/label_greeting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListCards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/grid_2"
+                android:layout_marginTop="@dimen/grid_3"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserTitle"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_card" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cdLocation"
+                android:layout_width="@dimen/grid_0"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/grid_2"
+                app:cardCornerRadius="@dimen/card_view_radius_corner"
+                app:cardElevation="@dimen/grid_1"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvListCards">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/grid_2">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent=".5" />
+
+                    <ImageView
+                        android:id="@+id/ivIconMaps"
+                        android:layout_width="@dimen/grid_5"
+                        android:layout_height="@dimen/grid_5"
+                        android:layout_margin="@dimen/grid_2"
+                        android:layout_marginStart="@dimen/grid_2"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_maps"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitleCity"
+                        style="@style/ItemTitleBold"
+                        android:layout_width="@dimen/grid_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/grid_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconMaps"
+                        app:layout_constraintTop_toTopOf="@id/ivIconMaps"
+                        tools:text="Colonia Roma" />
+
+                    <TextView
+                        android:id="@+id/tvTitleCountry"
+                        style="@style/ItemBody"
+                        android:layout_width="@dimen/grid_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/grid_2"
+                        android:layout_marginTop="@dimen/grid_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconMaps"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleCity"
+                        tools:text="MX" />
+
+                    <ImageView
+                        android:id="@+id/ivIconSunRise"
+                        android:layout_width="@dimen/grid_5"
+                        android:layout_height="@dimen/grid_5"
+                        android:layout_marginStart="@dimen/grid_2"
+                        android:layout_marginTop="@dimen/grid_4"
+                        android:layout_marginBottom="@dimen/grid_2"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_sunrise"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivIconMaps" />
+
+                    <TextView
+                        android:id="@+id/tvTitleSunRise"
+                        style="@style/ItemSubTitle"
+                        android:layout_width="@dimen/grid_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/grid_2"
+                        android:text="@string/label_item_sunrise"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineCard"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconSunRise"
+                        app:layout_constraintTop_toTopOf="@+id/ivIconSunRise" />
+
+                    <TextView
+                        android:id="@+id/tvValueSunRise"
+                        style="@style/ItemBody"
+                        android:layout_width="@dimen/grid_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/grid_2"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivIconSunRise"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineCard"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconSunRise"
+                        tools:text="6:00 A.M." />
+
+                    <ImageView
+                        android:id="@+id/ivIconSunSet"
+                        android:layout_width="@dimen/grid_5"
+                        android:layout_height="@dimen/grid_5"
+                        android:layout_marginStart="@dimen/grid_2"
+                        android:layout_marginBottom="@dimen/grid_2"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_sunset"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/guidelineCard"
+                        app:layout_constraintTop_toTopOf="@+id/ivIconSunRise" />
+
+                    <TextView
+                        android:id="@+id/tvTitleSunSet"
+                        style="@style/ItemSubTitle"
+                        android:layout_width="@dimen/grid_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/grid_2"
+                        android:text="@string/label_item_sunset"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconSunSet"
+                        app:layout_constraintTop_toTopOf="@+id/ivIconSunSet" />
+
+                    <TextView
+                        android:id="@+id/tvValueSunSet"
+                        style="@style/ItemBody"
+                        android:layout_width="@dimen/grid_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/grid_2"
+                        android:layout_marginTop="@dimen/grid_2"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivIconSunSet"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconSunSet"
+                        tools:text="7:00 P.M." />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</FrameLayout>
