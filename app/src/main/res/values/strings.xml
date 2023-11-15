@@ -32,6 +32,12 @@
     <string name="label_button_logout">Cerrar Sesión</string>
     <string name="label_profile_update_successfully">Se actualizaron los datos correctamente.</string>
 
+    <!--Dialgo-->
+    <string name="label_dialog_pick_photo">Seleccionar imagen</string>
+    <string name="label_dialog_pick_photo_description">Selecciona una imagen para tu perfil</string>
+    <string name="label_dialog_take_a_photo">Tomar una foto</string>
+    <string name="label_dialog_pick_photo_from_gallery">Seleccionar de la galeria</string>
+
     <!--Errors-->
     <string name="label_error_field_empty">El campo no puede estar vacio</string>
     <string name="label_error_phone_no_correct">El formato del telefono es incorrecto</string>

@@ -12,7 +12,7 @@
         android:layout_height="@dimen/grid_6"
         app:srcCompat="@drawable/humano"
         android:layout_marginTop="@dimen/grid_4"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/app_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

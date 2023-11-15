@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts.PickVisualMedia
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,17 +19,25 @@ import com.johnsapps.weatherapp.ui.login.LoginActivity
 import com.johnsapps.weatherapp.ui.principal.profile.viewModel.ProfileUIState
 import com.johnsapps.weatherapp.ui.principal.profile.viewModel.ProfileViewModel
 import com.johnsapps.weatherapp.ui.principal.profile.viewModel.UserUI
+import com.johnsapps.weatherapp.ui.uitils.createSimpleDialog
 import com.johnsapps.weatherapp.ui.uitils.makeToastError
 import com.johnsapps.weatherapp.ui.uitils.makeToastFast
 import com.johnsapps.weatherapp.ui.uitils.resetError
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+
 @AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private val viewModel: ProfileViewModel by viewModels()
+
+    private val pickMedia = registerForActivityResult(PickVisualMedia()) { uri ->
+        uri?.let {
+            binding.ivPhotoProfile.setImageURI(uri)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +59,10 @@ class ProfileFragment : Fragment() {
         binding.run {
             btnLogOut.setOnClickListener {
                 viewModel.logOut()
+            }
+
+            ivPhotoProfile.setOnClickListener {
+                showDialogPickPhoto()
             }
 
             tilEmail.resetError()
@@ -115,6 +129,24 @@ class ProfileFragment : Fragment() {
             etEmail.setText(user.email)
             etPhoneNumber.setText(user.phoneNumber)
         }
+    }
+
+    private fun showDialogPickPhoto() {
+        val dialog = createSimpleDialog(
+            title = resources.getString(R.string.label_dialog_pick_photo),
+            message = resources.getString(R.string.label_dialog_pick_photo_description),
+            positiveButton = resources.getString(R.string.label_dialog_take_a_photo),
+            negativeButton = resources.getString(R.string.label_dialog_pick_photo_from_gallery),
+            onClickPositive = { dialog, _ ->
+
+                dialog.dismiss()
+            },
+            onClickNegative = { dialog, _ ->
+                pickMedia.launch(PickVisualMediaRequest(PickVisualMedia.ImageOnly))
+                dialog.dismiss()
+            }
+        )
+        dialog.show()
     }
 
     override fun onResume() {

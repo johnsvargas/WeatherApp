@@ -1,8 +1,10 @@
 package com.johnsapps.weatherapp.ui.uitils
 
+import android.content.DialogInterface
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputLayout
 
@@ -49,5 +51,29 @@ fun TextInputLayout.resetError() {
             input.error = null
         }
     })
+}
+
+fun Fragment.createSimpleDialog(
+    title: String,
+    message: String,
+    positiveButton: String,
+    negativeButton: String,
+    onClickPositive: (dialog: DialogInterface, which: Int) -> Unit,
+    onClickNegative: (dialog: DialogInterface, which: Int) -> Unit
+): AlertDialog {
+    val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+    builder.setTitle(title)
+        .setMessage(message)
+        .setPositiveButton(
+            positiveButton
+        ) { dialog, which ->
+            onClickPositive(dialog, which)
+        }
+        .setNegativeButton(
+            negativeButton
+        ) { dialog, which ->
+            onClickNegative(dialog, which)
+        }
+    return builder.create()
 }
 
